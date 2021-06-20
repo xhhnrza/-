@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         "哈工大(威海)本科教学服务与管理系统"自动评教
 // @namespace    xzxx@hitwh.edu.cn
-// @version      1.0.0
+// @version      1.2.0
 // @description  仅适用于"哈工大(威海)本科教学服务与管理平台（jwts.hitwh.edu.cn）"学生评教，仅供编程爱好者学习使用，不得用于不正当目的；不支持校外使用，根据校本部风味咸牛奶同学脚本修改
 // @author       风味咸牛奶(威海)
 // @include      http://172.26.64.16/*
@@ -19,12 +19,13 @@ var randomRange = function (min, max)
 
 var returnCase = function (href)
 {
-    if(href.search("toUpdatePkpx")>0) return 1;         //评课评教材
+    if(href.search("Pkpx")>0) return 1;         //评课评教材
     else if(href.search("toUpdateXspjFx")>0||href.search("/Fxpj")>0) return 2;  //评价教与学状态
     else if(href.search("toUpdateFxpj_sy")>0) return 3; //评价实验课
     else if(href.search("toUpdateZhpj")>0) return 4;    //综合评价教师
     else return 0;
 };
+
 
 jwtsAutoComplete = function ()
 {
